@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nee Scent | Luxury Smell at Affordable Price</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#D4A017;--gold-light:#F0C040;--gold-dark:#8B6914;
+  --black:#080808;--black-soft:#101010;--black-card:#181818;
+  --white:#FEFEFE;--cream:#F8F3E8;--gray:#808070;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Raleway',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;background:rgba(8,8,8,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,160,23,0.2);}
+.logo{display:flex;flex-direction:column;align-items:flex-start;text-decoration:none;}
+.logo-main{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--gold);letter-spacing:4px;}
+.logo-sub{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gray);margin-top:1px;}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center;}
+.nav-links a{color:var(--white);text-decoration:none;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500;transition:color 0.3s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-cta{background:var(--gold)!important;color:var(--black)!important;padding:10px 22px!important;font-weight:600!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger span{width:24px;height:1px;background:var(--gold);display:block;transition:all 0.3s;}
+@media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}.nav-links.open{display:flex;flex-direction:column;position:fixed;top:65px;left:0;right:0;background:var(--black);padding:32px 24px;gap:24px;border-bottom:1px solid rgba(212,160,23,0.15);z-index:99;}}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 24px 60px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(212,160,23,0.12) 0%,transparent 65%);}
+.hero::after{content:'✦';position:absolute;top:20%;left:10%;font-size:80px;color:rgba(212,160,23,0.04);animation:float 6s ease-in-out infinite;}
+.hero-badge{display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(212,160,23,0.4);color:var(--gold);font-size:10px;letter-spacing:4px;text-transform:uppercase;padding:8px 24px;margin-bottom:36px;animation:fadeUp 1s ease both;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(52px,13vw,110px);font-weight:400;line-height:1;margin-bottom:16px;animation:fadeUp 1s ease 0.2s both;}
+.hero h1 em{display:block;font-style:italic;color:var(--gold);}
+.hero-sub{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gray);margin-bottom:48px;animation:fadeUp 1s ease 0.4s both;}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeUp 1s ease 0.6s both;}
+.btn-gold{background:var(--gold);color:var(--black);padding:16px 40px;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:700;text-decoration:none;transition:all 0.3s;display:inline-block;}
+.btn-gold:hover{background:var(--gold-light);}
+.btn-outline{border:1px solid rgba(212,160,23,0.5);color:var(--gold);padding:16px 40px;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:500;text-decoration:none;transition:all 0.3s;display:inline-block;}
+.btn-outline:hover{background:rgba(212,160,23,0.1);border-color:var(--gold);}
+
+/* MARQUEE */
+.marquee-wrap{overflow:hidden;border-top:1px solid rgba(212,160,23,0.15);border-bottom:1px solid rgba(212,160,23,0.15);padding:14px 0;background:var(--black-soft);}
+.marquee{display:flex;gap:48px;animation:marquee 25s linear infinite;white-space:nowrap;}
+.marquee span{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);opacity:0.8;}
+.marquee .sep{color:var(--gold-dark);}
+
+/* STATS */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(212,160,23,0.1);max-width:900px;margin:0 auto;}
+.stat-item{text-align:center;padding:32px 16px;border-right:1px solid rgba(212,160,23,0.1);}
+.stat-item:last-child{border-right:none;}
+.stat-num{font-family:'Playfair Display',serif;font-size:36px;font-weight:400;color:var(--gold);}
+.stat-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gray);margin-top:6px;}
+@media(max-width:600px){.stats-bar{grid-template-columns:repeat(2,1fr);}.stat-item:nth-child(2){border-right:none;}.stat-item:nth-child(3){border-top:1px solid rgba(212,160,23,0.1);}}
+
+/* SECTIONS */
+.section{padding:80px 24px;max-width:1200px;margin:0 auto;}
+.section-header{margin-bottom:48px;}
+.section-label{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);font-weight:400;line-height:1.15;}
+.section-title em{font-style:italic;color:var(--gold);}
+
+/* CATEGORIES */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:64px;}
+.cat-card{background:var(--black-card);border:1px solid rgba(212,160,23,0.1);padding:28px 20px;text-align:center;cursor:pointer;transition:all 0.3s;text-decoration:none;display:block;}
+.cat-card:hover{border-color:var(--gold);background:rgba(212,160,23,0.05);}
+.cat-icon{font-size:36px;margin-bottom:12px;display:block;width:100%;}
+.cat-icon img{width:48px;height:48px;object-fit:contain;margin:0 auto;display:block;}
+.cat-name{font-family:'Playfair Display',serif;font-size:18px;color:var(--white);margin-bottom:4px;}
+.cat-count{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);}
+
+/* PRODUCTS */
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+.product-card{background:var(--black-card);border:1px solid rgba(212,160,23,0.08);transition:all 0.3s;overflow:hidden;}
+.product-card:hover{border-color:rgba(212,160,23,0.4);transform:translateY(-4px);}
+.product-img{height:260px;background:linear-gradient(135deg,#1a1a0a,#0a0a0a);display:flex;align-items:center;justify-content:center;font-size:72px;position:relative;overflow:hidden;}
+.product-img img{width:100%;height:100%;object-fit:cover;}
+.product-badge{position:absolute;top:12px;left:0;background:var(--gold);color:var(--black);font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;font-weight:700;z-index:2;}
+.product-badge.new{background:#2a5a2a;color:#7fff7f;}
+.product-info{padding:18px 16px;}
+.product-brand{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+.product-name{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:4px;}
+.product-desc{font-size:11px;color:var(--gray);margin-bottom:10px;line-height:1.6;}
+.product-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
+.product-price{font-size:15px;color:var(--gold);font-weight:700;}
+.product-size{font-size:10px;color:var(--gray);letter-spacing:1px;}
+.product-btn{display:block;text-align:center;background:transparent;border:1px solid rgba(212,160,23,0.4);color:var(--gold);padding:11px;font-size:10px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all 0.3s;cursor:pointer;font-family:'Raleway',sans-serif;width:100%;font-weight:600;}
+.product-btn:hover{background:var(--gold);color:var(--black);}
+
+/* FEATURES */
+.features-section{background:var(--black-soft);padding:80px 24px;border-top:1px solid rgba(212,160,23,0.1);border-bottom:1px solid rgba(212,160,23,0.1);}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:40px;max-width:1200px;margin:0 auto;}
+.feature-item{text-align:center;}
+.feature-icon{font-size:36px;margin-bottom:16px;}
+.feature-icon img{width:48px;height:48px;object-fit:contain;margin:0 auto;display:block;}
+.feature-title{font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);margin-bottom:10px;}
+.feature-text{font-size:12px;color:var(--gray);line-height:1.8;letter-spacing:0.3px;}
+
+/* COMBOS */
+.combo-section{padding:80px 24px;background:var(--black-soft);border-bottom:1px solid rgba(212,160,23,0.1);}
+.combo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;max-width:1200px;margin:0 auto;}
+.combo-card{background:var(--black-card);border:1px solid rgba(212,160,23,0.15);padding:32px;position:relative;overflow:hidden;transition:all 0.3s;}
+.combo-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.combo-card:hover{border-color:rgba(212,160,23,0.4);}
+.combo-badge{display:inline-block;background:rgba(212,160,23,0.15);color:var(--gold);font-size:9px;letter-spacing:3px;text-transform:uppercase;padding:4px 12px;margin-bottom:16px;border:1px solid rgba(212,160,23,0.3);}
+.combo-name{font-family:'Playfair Display',serif;font-size:24px;margin-bottom:8px;}
+.combo-items{font-size:12px;color:var(--gray);margin-bottom:16px;line-height:1.8;}
+.combo-price{font-size:22px;color:var(--gold);font-weight:700;margin-bottom:20px;}
+.combo-old{font-size:13px;color:var(--gray);text-decoration:line-through;margin-left:8px;font-weight:400;}
+
+/* CTA */
+.cta-section{text-align:center;padding:100px 24px;position:relative;overflow:hidden;}
+.cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50%,rgba(212,160,23,0.08),transparent 70%);}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(36px,8vw,72px);font-weight:400;margin-bottom:16px;position:relative;}
+.cta-section h2 em{font-style:italic;color:var(--gold);}
+.cta-section p{color:var(--gray);font-size:13px;letter-spacing:1px;margin-bottom:40px;position:relative;}
+
+/* FOOTER */
+footer{background:var(--black-soft);border-top:1px solid rgba(212,160,23,0.15);padding:48px 24px 24px;}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px;}
+@media(max-width:700px){.footer-top{grid-template-columns:1fr;}}
+.footer-brand .footer-logo-text{font-family:'Playfair Display',serif;font-size:28px;color:var(--gold);letter-spacing:3px;margin-bottom:8px;}
+.footer-brand p{font-size:12px;color:var(--gray);line-height:1.8;margin-top:12px;max-width:280px;}
+.footer-col h4{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:10px;}
+.footer-col ul li a{color:var(--gray);text-decoration:none;font-size:12px;letter-spacing:0.5px;transition:color 0.3s;}
+.footer-col ul li a:hover{color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(212,160,23,0.1);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:11px;color:rgba(128,128,112,0.5);letter-spacing:1px;}
+.footer-tiktok{font-size:11px;color:var(--gold);letter-spacing:1px;}
+
+/* WHATSAPP */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:200;background:#25D366;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 24px rgba(37,211,102,0.5);transition:transform 0.3s;animation:pulse-wa 3s ease-in-out infinite;}
+.wa-float:hover{transform:scale(1.12);animation:none;}
+.wa-float svg{width:30px;height:30px;fill:white;}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-20px);}}
+@keyframes pulse-wa{0%,100%{box-shadow:0 4px 24px rgba(37,211,102,0.5);}50%{box-shadow:0 4px 40px rgba(37,211,102,0.8);}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <span class="logo-main">NEE SCENT</span>
+    <span class="logo-sub">Luxury Smell at Affordable Price</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="shop.html">Shop</a></li>
+    <li><a href="combos.html">Combos</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Order Now</a></li>
+  </ul>
+  <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-badge">✦ Premium Fragrances ✦ Nationwide Delivery ✦</div>
+    <h1>Smell Like<br><em>A Million</em></h1>
+    <p class="hero-sub">Luxury Scents · Affordable Prices · Nigeria Wide Delivery</p>
+    <div class="hero-btns">
+      <a href="shop.html" class="btn-gold">Shop Perfumes</a>
+      <a href="https://wa.me/2349077712126" class="btn-outline">WhatsApp Order</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span>Armaf</span><span class="sep">✦</span><span>Lattafa</span><span class="sep">✦</span><span>Rasasi</span><span class="sep">✦</span><span>Swiss Arabian</span><span class="sep">✦</span><span>Paris Corner</span><span class="sep">✦</span><span>Afnan</span><span class="sep">✦</span><span>Smart Collection</span><span class="sep">✦</span><span>Al Haramain</span><span class="sep">✦</span><span>Club de Nuit</span><span class="sep">✦</span><span>Breed</span><span class="sep">✦</span><span>Nationwide Delivery</span><span class="sep">✦</span><span>Armaf</span><span class="sep">✦</span><span>Lattafa</span><span class="sep">✦</span><span>Rasasi</span><span class="sep">✦</span><span>Swiss Arabian</span><span class="sep">✦</span><span>Paris Corner</span><span class="sep">✦</span><span>Afnan</span><span class="sep">✦</span><span>Smart Collection</span><span class="sep">✦</span><span>Al Haramain</span><span class="sep">✦</span><span>Club de Nuit</span><span class="sep">✦</span><span>Breed</span><span class="sep">✦</span><span>Nationwide Delivery</span><span class="sep">✦</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<div style="padding:48px 24px;">
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num">50+</div><div class="stat-label">Perfume Brands</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Authentic</div></div>
+    <div class="stat-item"><div class="stat-num">🚚</div><div class="stat-label">Nationwide Delivery</div></div>
+    <div class="stat-item"><div class="stat-num">24h</div><div class="stat-label">WhatsApp Support</div></div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="section">
+  <div class="section-header">
+    <div class="section-label">Browse by Category</div>
+    <h2 class="section-title">Find Your <em>Signature</em> Scent</h2>
+  </div>
+  <div class="cat-grid">
+    <a href="shop.html?cat=women" class="cat-card">
+      <div class="cat-icon"><img src="https://images.pexels.com/photos/3335211/pexels-photo-3335211.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Women's Perfume"></div>
+      <div class="cat-name">For Her</div>
+      <div class="cat-count">Women's Fragrances</div>
+    </a>
+    <a href="shop.html?cat=men" class="cat-card">
+      <div class="cat-icon"><img src="https://images.pexels.com/photos/3998265/pexels-photo-3998265.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Men's Perfume"></div>
+      <div class="cat-name">For Him</div>
+      <div class="cat-count">Men's Fragrances</div>
+    </a>
+    <a href="shop.html?cat=unisex" class="cat-card">
+      <div class="cat-icon"><img src="https://images.pexels.com/photos/6779205/pexels-photo-6779205.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Unisex Perfume"></div>
+      <div class="cat-name">Unisex</div>
+      <div class="cat-count">For Everyone</div>
+    </a>
+    <a href="shop.html?cat=oud" class="cat-card">
+      <div class="cat-icon"><img src="https://images.pexels.com/photos/7791652/pexels-photo-7791652.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Oud Perfume"></div>
+      <div class="cat-name">Oud & Oriental</div>
+      <div class="cat-count">Arabic Scents</div>
+    </a>
+    <a href="combos.html" class="cat-card">
+      <div class="cat-icon"><img src="https://images.pexels.com/photos/6347805/pexels-photo-6347805.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Gift Box"></div>
+      <div class="cat-name">Combo Deals</div>
+      <div class="cat-count">Save More</div>
+    </a>
+  </div>
+
+  <!-- FEATURED PRODUCTS -->
+  <div class="section-header">
+    <div class="section-label">Bestsellers</div>
+    <h2 class="section-title">Most <em>Loved</em> Scents</h2>
+  </div>
+  <div class="products-grid">
+
+    <div class="product-card">
+      <div class="product-img"><img src="https://images.pexels.com/photos/965989/pexels-photo-965989.jpeg?auto=compress&cs=tinysrgb&w=400&h=260&fit=crop" alt="Armaf Club de Nuit Intense"><span class="product-badge">Bestseller</span></div>
+      <div class="product-info">
+        <div class="product-brand">Armaf</div>
+        <div class="product-name">Club de Nuit Intense</div>
+        <div class="product-desc">Bold, masculine woody fragrance. Nigeria's top selling scent for men.</div>
+        <div class="product-meta"><div class="product-price">₦18,000</div><div class="product-size">105ml EDP</div></div>
+        <a href="https://wa.me/2349077712126?text=Hi Nee Scent! I want to order Armaf Club de Nuit Intense Man 105ml EDP. Please confirm availability and price." class="product-btn">Order on WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img"><img src="https://images.pexels.com/photos/7087990/pexels-photo-7087990.jpeg?auto=compress&cs=tinysrgb&w=400&h=260&fit=crop" alt="Lattafa Asad"><span class="product-badge">Top Pick</span></div>
+      <div class="product-info">
+        <div class="product-brand">Lattafa</div>
+        <div class="product-name">Asad</div>
+        <div class="product-desc">Fresh, spicy and bold. Long lasting oriental fragrance for the confident man.</div>
+        <div class="product-meta"><div class="product-price">₦15,000</div><div class="product-size">100ml EDP</div></div>
+        <a href="https://wa.me/2349077712126?text=Hi Nee Scent! I want to order Lattafa Asad 100ml EDP. Please confirm availability and price." class="product-btn">Order on WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img"><img src="https://images.pexels.com/photos/6574461/pexels-photo-6574461.jpeg?auto=compress&cs=tinysrgb&w=400&h=260&fit=crop" alt="Rasasi Hawas"><span class="product-badge new">New</span></div>
+      <div class="product-info">
+        <div class="product-brand">Rasasi</div>
+        <div class="product-name">Hawas</div>
+        <div class="product-desc">Fresh aquatic scent with a warm woody base. A modern classic for men.</div>
+        <div class="product-meta"><div class="product-price">₦16,000</div><div class="product-size">100ml EDP</div></div>
+        <a href="https://wa.me/2349077712126?text=Hi Nee Scent! I want to order Rasasi Hawas 100ml EDP. Please confirm availability and price." class="product-btn">Order on WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img"><img src="https://images.pexels.com/photos/3962638/pexels-photo-3962638.jpeg?auto=compress&cs=tinysrgb&w=400&h=260&fit=crop" alt="Swiss Arabian Shaghaf Oud"></div>
+      <div class="product-info">
+        <div class="product-brand">Swiss Arabian</div>
+        <div class="product-name">Shaghaf Oud</div>
+        <div class="product-desc">Rich golden oud with precious oriental notes. A timeless Arabic fragrance.</div>
+        <div class="product-meta"><div class="product-price">₦20,000</div><div class="product-size">75ml EDP</div></div>
+        <a href="https://wa.me/2349077712126?text=Hi Nee Scent! I want to order Swiss Arabian Shaghaf Oud 75ml EDP. Please confirm availability and price." class="product-btn">Order on WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img"><img src="https://images.pexels.com/photos/3667919/pexels-photo-3667919.jpeg?auto=compress&cs=tinysrgb&w=400&h=260&fit=crop" alt="Armaf Breed Man"><span class="product-badge">Popular</span></div>
+      <div class="product-info">
+        <div class="product-brand">Armaf</div>
+        <div class="product-name">Breed Man</div>
+        <div class="product-desc">Clean, fresh and masculine. A daily wear scent that commands respect.</div>
+        <div class="product-meta"><div class="product-price">₦14,000</div><div class="product-size">100ml EDP</div></div>
+        <a href="https://wa.me/2349077712126?text=Hi Nee Scent! I want to order Armaf Breed Man 100ml EDP. Please confirm availability and price." class="product-btn">Order on WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-img"><img src="https://images.pexels.com/photos/3335211/pexels-photo-3335211.jpeg?auto=compress&cs=tinysrgb&w=400&h=260&fit=crop" alt="Paris Corner Pendora Scents"></div>
+      <div class="product-info">
+        <div class="product-brand">Paris Corner</div>
+        <div class="product-name">Pendora Scents</div>
+        <div class="product-desc">Sweet, fruity and feminine. A crowd favourite for ladies who love to stand out.</div>
+        <div class="product-meta"><div class="product-price">₦12,000</div><div class="product-size">100ml EDP</div></div>
+        <a href="https://wa.me/2349077712126?text=Hi Nee Scent! I want to order Paris Corner Pendora Scents 100ml EDP. Please confirm availability and price." class="product-btn">Order on WhatsApp</a>
+      </div>
+    </div>
+
+  </div>
+  <div style="text-align:center;margin-top:40px;">
+    <a href="shop.html" class="btn-outline">View Full Collection →</a>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section">
+  <div style="text-align:center;margin-bottom:48px;">
+    <div class="section-label">Why Nee Scent</div>
+    <h2 class="section-title" style="font-family:'Playfair Display',serif;">The Nee Scent <em>Experience</em></h2>
+  </div>
+  <div class="features-grid">
+    <div class="feature-item">
+      <div class="feature-icon"><img src="https://images.pexels.com/photos/4123891/pexels-photo-4123891.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="100% Authentic"></div>
+      <div class="feature-title">100% Authentic</div>
+      <p class="feature-text">Every perfume we sell is original and authentic. No fakes, no replicas. Only the real thing at prices that make sense.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon"><img src="https://images.pexels.com/photos/6169668/pexels-photo-6169668.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Nationwide Delivery"></div>
+      <div class="feature-title">Nationwide Delivery</div>
+      <p class="feature-text">We deliver to every state in Nigeria. Lagos, Abuja, Port Harcourt, Kano — wherever you are, your scent will find you.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon"><img src="https://images.pexels.com/photos/4386430/pexels-photo-4386430.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Affordable Luxury"></div>
+      <div class="feature-title">Affordable Luxury</div>
+      <p class="feature-text">Luxury smell does not have to cost a luxury price. We source directly so you get the best fragrances at prices that work for you.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon"><img src="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Easy WhatsApp Orders"></div>
+      <div class="feature-title">Easy WhatsApp Orders</div>
+      <p class="feature-text">Order directly on WhatsApp in seconds. Chat with us, choose your scent and we handle the rest.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMBO TEASER -->
+<div class="combo-section">
+  <div style="text-align:center;margin-bottom:40px;max-width:1200px;margin-left:auto;margin-right:auto;">
+    <div class="section-label">Save More</div>
+    <h2 class="section-title" style="font-family:'Playfair Display',serif;">Sweet <em>Combo</em> Deals</h2>
+  </div>
+  <div class="combo-grid">
+    <div class="combo-card">
+      <div class="combo-badge">🎀 Sweet Girlie Combo</div>
+      <div class="combo-name">Sweet Girl Bundle</div>
+      <div class="combo-items">2 feminine fragrances of your choice + free gift wrap + free delivery within Lagos</div>
+      <div class="combo-price">₦30,000 <span class="combo-old">₦40,000</span></div>
+      <a href="https://wa.me/2349077712126?text=Hi Nee Scent! I'm interested in the Sweet Girlie Combo for ₦30,000. Please send me the available options." class="product-btn">Get This Deal</a>
+    </div>
+    <div class="combo-card">
+      <div class="combo-badge">👑 Boss Man Combo</div>
+      <div class="combo-name">His Signature Set</div>
+      <div class="combo-items">2 masculine fragrances of your choice + free gift wrap + free delivery within Lagos</div>
+      <div class="combo-price">₦30,000 <span class="combo-old">₦40,000</span></div>
+      <a href="https://wa.me/2349077712126?text=Hi Nee Scent! I'm interested in the Boss Man Combo for ₦30,000. Please send me the available options." class="product-btn">Get This Deal</a>
+    </div>
+    <div class="combo-card">
+      <div class="combo-badge">💑 Couple Combo</div>
+      <div class="combo-name">His & Hers Set</div>
+      <div class="combo-items">1 feminine + 1 masculine fragrance of your choice + gift wrap + free delivery</div>
+      <div class="combo-price">₦30,000 <span class="combo-old">₦42,000</span></div>
+      <a href="https://wa.me/2349077712126?text=Hi Nee Scent! I'm interested in the Couple Combo for ₦30,000. Please send me the available options." class="product-btn">Get This Deal</a>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:32px;max-width:1200px;margin-left:auto;margin-right:auto;">
+    <a href="combos.html" class="btn-outline">View All Combos →</a>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Ready to Smell<br><em>Incredible?</em></h2>
+  <p>Order now and get delivered anywhere in Nigeria</p>
+  <a href="https://wa.me/2349077712126?text=Hi Nee Scent! I want to place an order. Please help me choose the right fragrance." class="btn-gold">Order on WhatsApp Now ✦</a>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo-text">NEE SCENT</div>
+        <p>Luxury Smell at Affordable Price. Premium fragrances delivered to your doorstep across Nigeria. Smell amazing every day without breaking the bank.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop All</a></li>
+          <li><a href="combos.html">Combo Deals</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Order Now</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://wa.me/2349077712126">WhatsApp Us</a></li>
+          <li><a href="https://tiktok.com/@nee_scent">TikTok: @nee_scent</a></li>
+          <li><a href="#">Nationwide Delivery</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 Nee Scent — All Rights Reserved</span>
+      <span class="footer-tiktok">@nee_scent on TikTok</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/2349077712126?text=Hi Nee Scent! I want to place an order." class="wa-float" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.858L.057 23.804a.5.5 0 00.609.64l6.098-1.598A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.892a9.875 9.875 0 01-5.022-1.368l-.36-.214-3.733.978.995-3.63-.235-.374A9.861 9.861 0 012.108 12C2.108 6.527 6.527 2.108 12 2.108S21.892 6.527 21.892 12 17.473 21.892 12 21.892z"/></svg>
+</a>
+
+</body>
+</html>
