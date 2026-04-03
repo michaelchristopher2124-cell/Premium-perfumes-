@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop | Nee Scent</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Crect width='200' height='60' fill='%23D4A017' rx='5'/%3E%3Ctext x='100' y='38' font-family='Playfair Display' font-size='22' font-weight='bold' fill='%23080808' text-anchor='middle'%3ENEE SCENT%3C/text%3E%3C/svg%3E" alt="Nee Scent Logo" style="height:50px;">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
+      <li><a href="combos.html">Combos</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Order Now</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="label">All Fragrances</div>
+    <h1>Our <em>Scent</em> Collection</h1>
+  </div>
+</div>
+
+<div class="filter-wrap">
+  <div class="container">
+    <div class="filters" id="categoryFilters">
+      <button class="filter-btn active" data-cat="all">All</button>
+      <button class="filter-btn" data-cat="air-fresheners">Air Fresheners</button>
+      <button class="filter-btn" data-cat="miniature">25ml Miniature</button>
+      <button class="filter-btn" data-cat="combos">Amazing Combos</button>
+      <button class="filter-btn" data-cat="long-lasting">100ml Long Lasting</button>
+      <button class="filter-btn" data-cat="body-spray">Body Spray</button>
+      <button class="filter-btn" data-cat="perfume-oils">Perfume Oils</button>
+      <button class="filter-btn" data-cat="designer">Designer Perfumes</button>
+    </div>
+  </div>
+</div>
+
+<div class="shop-section">
+  <div class="container">
+    <div class="products-grid" id="productsGrid">
+      <div class="loading-spinner">Loading products...</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">NEE SCENT</div>
+        <p>Luxury Smell at Affordable Price. Premium fragrances delivered to your doorstep across Nigeria.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="combos.html">Combos</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul><li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/2349077712126">0907 771 2126</a></li><li><i class="fab fa-tiktok"></i> @neescent1</li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Nee Scent — Home Of Everything Scent</p></div>
+  </div>
+</footer>
+
+<a href="https://wa.me/2349077712126" class="wa-float" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.858L.057 23.804a.5.5 0 00.609.64l6.098-1.598A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.892a9.875 9.875 0 01-5.022-1.368l-.36-.214-3.733.978.995-3.63-.235-.374A9.861 9.861 0 012.108 12C2.108 6.527 6.527 2.108 12 2.108S21.892 6.527 21.892 12 17.473 21.892 12 21.892z"/></svg>
+</a>
+
+<script src="script.js"></script>
+<script>
+  loadAllProducts();
+  setupFilters();
+  function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+</script>
+</body>
+</html>
