@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nee Scent | Luxury Smell at Affordable Price</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Crect width='200' height='60' fill='%23D4A017' rx='5'/%3E%3Ctext x='100' y='38' font-family='Playfair Display' font-size='22' font-weight='bold' fill='%23080808' text-anchor='middle'%3ENEE SCENT%3C/text%3E%3C/svg%3E" alt="Nee Scent Logo" style="height:50px;">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="combos.html">Combos</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Order Now</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">✦ Premium Fragrances ✦ Nationwide Delivery ✦</div>
+    <h1>Smell Like<br><em>A Million</em></h1>
+    <p class="hero-sub">Luxury Scents · Affordable Prices · Nigeria Wide Delivery</p>
+    <div class="hero-btns">
+      <a href="shop.html" class="btn-gold">Shop Perfumes</a>
+      <a href="https://wa.me/2349077712126" class="btn-outline">WhatsApp Order</a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span>100% Authentic</span><span class="sep">✦</span><span>Nationwide Delivery</span><span class="sep">✦</span><span>Best Prices</span><span class="sep">✦</span><span>Quality Oils</span><span class="sep">✦</span><span>Home Of Everything Scent</span><span class="sep">✦</span><span>Wholesale/Retail</span><span class="sep">✦</span><span>Strictly Undiluted</span><span class="sep">✦</span>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-item"><div class="stat-num">50+</div><div class="stat-label">Perfume Brands</div></div>
+  <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Authentic</div></div>
+  <div class="stat-item"><div class="stat-num">🚚</div><div class="stat-label">Nationwide Delivery</div></div>
+  <div class="stat-item"><div class="stat-num">24/7</div><div class="stat-label">WhatsApp Support</div></div>
+</div>
+
+<section class="categories-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Browse by Category</div>
+      <h2 class="section-title">Find Your <em>Signature</em> Scent</h2>
+    </div>
+    <div class="cat-grid">
+      <a href="shop.html?cat=air-fresheners" class="cat-card">
+        <div class="cat-icon"><img src="https://images.pexels.com/photos/6347805/pexels-photo-6347805.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Air Fresheners"></div>
+        <div class="cat-name">Air Fresheners</div>
+        <div class="cat-count">From ₦5,000</div>
+      </a>
+      <a href="shop.html?cat=miniature" class="cat-card">
+        <div class="cat-icon"><img src="https://images.pexels.com/photos/965989/pexels-photo-965989.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="25ml Miniature"></div>
+        <div class="cat-name">25ml Miniature</div>
+        <div class="cat-count">From ₦2,500</div>
+      </a>
+      <a href="shop.html?cat=combos" class="cat-card">
+        <div class="cat-icon"><img src="https://images.pexels.com/photos/6347805/pexels-photo-6347805.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Amazing Combos"></div>
+        <div class="cat-name">Amazing Combos</div>
+        <div class="cat-count">From ₦15,000</div>
+      </a>
+      <a href="shop.html?cat=long-lasting" class="cat-card">
+        <div class="cat-icon"><img src="https://images.pexels.com/photos/7087990/pexels-photo-7087990.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="100ml Long Lasting"></div>
+        <div class="cat-name">100ml Long Lasting</div>
+        <div class="cat-count">From ₦20,000</div>
+      </a>
+      <a href="shop.html?cat=body-spray" class="cat-card">
+        <div class="cat-icon"><img src="https://images.pexels.com/photos/3335211/pexels-photo-3335211.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Body Spray"></div>
+        <div class="cat-name">Body Spray</div>
+        <div class="cat-count">200-250ml</div>
+      </a>
+      <a href="shop.html?cat=perfume-oils" class="cat-card">
+        <div class="cat-icon"><img src="https://images.pexels.com/photos/3962638/pexels-photo-3962638.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Perfume Oils"></div>
+        <div class="cat-name">Perfume Oils</div>
+        <div class="cat-count">Affordable Luxury</div>
+      </a>
+      <a href="shop.html?cat=designer" class="cat-card">
+        <div class="cat-icon"><img src="https://images.pexels.com/photos/7791652/pexels-photo-7791652.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Designer Perfumes"></div>
+        <div class="cat-name">Designer Perfumes</div>
+        <div class="cat-count">Lasts 78+ hours</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="featured-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Bestsellers</div>
+      <h2 class="section-title">Most <em>Loved</em> Scents</h2>
+    </div>
+    <div class="products-grid" id="featured-products">
+      <div class="loading-spinner">Loading products...</div>
+    </div>
+    <div class="text-center">
+      <a href="shop.html" class="btn-outline">View Full Collection →</a>
+    </div>
+  </div>
+</section>
+
+<section class="features-section">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="section-label">Why Nee Scent</div>
+      <h2 class="section-title">The Nee Scent <em>Experience</em></h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon"><img src="https://images.pexels.com/photos/4123891/pexels-photo-4123891.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="100% Authentic"></div>
+        <div class="feature-title">100% Authentic</div>
+        <p class="feature-text">Every perfume we sell is original and authentic. No fakes, no replicas. Only the real thing at prices that make sense.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon"><img src="https://images.pexels.com/photos/6169668/pexels-photo-6169668.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Nationwide Delivery"></div>
+        <div class="feature-title">Nationwide Delivery</div>
+        <p class="feature-text">We deliver to every state in Nigeria. Lagos, Abuja, Port Harcourt, Kano — wherever you are, your scent will find you.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon"><img src="https://images.pexels.com/photos/4386430/pexels-photo-4386430.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Affordable Luxury"></div>
+        <div class="feature-title">Affordable Luxury</div>
+        <p class="feature-text">Luxury smell does not have to cost a luxury price. We source directly so you get the best fragrances at prices that work for you.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon"><img src="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop" alt="Easy WhatsApp Orders"></div>
+        <div class="feature-title">Easy WhatsApp Orders</div>
+        <p class="feature-text">Order directly on WhatsApp in seconds. Chat with us, choose your scent and we handle the rest.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to Smell<br><em>Incredible?</em></h2>
+    <p>Order now and get delivered anywhere in Nigeria</p>
+    <a href="https://wa.me/2349077712126" class="btn-gold">Order on WhatsApp Now ✦</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">NEE SCENT</div>
+        <p>Luxury Smell at Affordable Price. Premium fragrances delivered to your doorstep across Nigeria.</p>
+        <div class="social-links">
+          <a href="https://tiktok.com/@neescent1"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/2349077712126"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="combos.html">Combos</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/2349077712126">0907 771 2126</a></li>
+          <li><i class="fab fa-tiktok"></i> @neescent1</li>
+          <li><i class="fas fa-envelope"></i> neescent@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Nee Scent — All Rights Reserved</p>
+      <p class="tagline">Home Of Everything Scent | Strictly Undiluted Perfume | Wholesale/Retail</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/2349077712126" class="wa-float" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.858L.057 23.804a.5.5 0 00.609.64l6.098-1.598A11.947 11.947 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.892a9.875 9.875 0 01-5.022-1.368l-.36-.214-3.733.978.995-3.63-.235-.374A9.861 9.861 0 012.108 12C2.108 6.527 6.527 2.108 12 2.108S21.892 6.527 21.892 12 17.473 21.892 12 21.892z"/></svg>
+</a>
+
+<script src="script.js"></script>
+<script>
+  loadFeaturedProducts();
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
